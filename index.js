@@ -2,6 +2,7 @@ import express from "express";
 import { MongoClient, ObjectId } from "mongodb";
 import * as dotenv from "dotenv";
 dotenv.config();
+import cors from "cors";
 const app = express();
 const PORT = 4000;
 
@@ -13,6 +14,8 @@ await client.connect(); // call
 console.log("Mongo is connected !!!  ");
 
 app.use(express.json());
+
+app.use(cors());
 
 app.get("/", function (req, res) {
   res.send("Hello World");
