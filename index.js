@@ -20,10 +20,6 @@ app.use(express.json());
 
 app.use(cors());
 
-app.get("/", function (req, res) {
-  res.send(data);
-});
-
 app.use("/studentDatas", studentsRouter);
 app.use("/users", usersRouter);
 
