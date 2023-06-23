@@ -17,8 +17,11 @@ await client.connect(); // call
 console.log("Mongo is connected !!!  ");
 
 app.use(express.json());
-
 app.use(cors());
+
+app.get("/", function(req,res){
+  res.send("Hello World")
+})
 
 app.use("/studentDatas", studentsRouter);
 app.use("/users", usersRouter);
